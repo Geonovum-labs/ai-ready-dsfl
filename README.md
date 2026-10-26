@@ -1,78 +1,82 @@
-> ℹ️ Na het gebruiken van de instructies kun je de inhoud vervangen door informatie over de inhoud. De oorspronkelijke inhoud van de readme is terug te lezen bij het [ReSpec-template](https://github.com/Geonovum/NL-ReSpec-template).
+# AI Ready DSFL
 
-## ReSpec template instructies
+This repository is used to capture the activities for the AI Ready DSFL project. It contains a document (starting as an empty ReSpec template). 
 
-ReSpec is een tool om HTML- en PDF-documenten te genereren op basis van markdowncontent. Deze template helpt je bij het opstellen en publiceren van documenten volgens de Geonovum-standaard.
+[More info on the project can be added here]
 
-De dynamische voorbeeldpagina van het template is [hier te bekijken](https://geonovum.github.io/NL-ReSpec-template/).
+## ReSpec template instructions
+
+ReSpec is a tool for generating HTML and PDF documents from markdown content. This template helps you create and publish documents according to the Geonovum standard.
+
+The dynamic example page of the template is [available here](https://geonovum.github.io/NL-ReSpec-template/).
 
 ---
 
-## Starten
+## Getting started
 
-Gebruik de knop [*Gebruik deze template*](https://github.com/Geonovum/NL-ReSpec-template/generate?description=Geonovum+documenttemplate) om een nieuwe repository aan te maken:
+Use the [*Use this template*](https://github.com/Geonovum/NL-ReSpec-template/generate?description=Geonovum+documenttemplate) button to create a new repository:
 
-* **Owner:** kies `Geonovum` (als je daar rechten voor hebt).
-* **Visibility:** kies **Public**.
-* **Rechten?** welke rechten heb je hiervoor nodig? Lukt het niet vraag een [admin](#nieuwe-repository-toevoegen-aan-github-team)
+* **Owner:** choose `Geonovum` (if you have permission there).
+* **Visibility:** choose **Public**.
+* **Permissions?** which permissions do you need for this? If this does not work, ask an [admin](#add-new-repository-to-github-team)
 
-> ℹ️ Na het aanmaken moet je **handmatig GitHub Pages activeren** in de instellingen van je nieuwe repository:
+> ℹ️ After creating it, you must **manually activate GitHub Pages** in the settings of your new repository:
 >
-> * Ga naar `Settings` → `Pages`
-> * Kies onder “Source” de branch `main` en map `/ (root)`
-> * _optioneel_ kun je via cog-wieltje "Use your GitHub Pages website" aanvinken zodat deze rechtsboven getoond wordt.
+> * Go to `Settings` → `Pages`
+> * Under “Source”, select the `main` branch and the `/ (root)` folder
+> * _optional_: you can enable “Use your GitHub Pages website” via the cogwheel so it is shown in the top-right corner.
 
-### Nieuwe repository toevoegen aan GitHub-team
+### Add new repository to GitHub team
 
-Vraag aan een GitHub-administrator (Zie [**handleiding tooling**](https://geonovum.github.io/handleiding-tooling/) -> *wie beheert wat?*) om de nieuwe repository aan een team in GitHub toe te voegen.
+Ask a GitHub administrator (see [**tooling guide**](https://geonovum.github.io/handleiding-tooling/) -> *who manages what?*) to add the new repository to a team in GitHub.
 
 ---
 
-## Gebruikersinstructie
+## User instructions
 
-Voor het aanpassen van het document raden we aan om een IDE te gebruiken, zoals [Visual Studio Code](https://code.visualstudio.com/). Deze geeft een voorbeeldweergave van je markdown en helpt bij het beheren van je bestanden.
+To edit the document, we recommend using an IDE such as [Visual Studio Code](https://code.visualstudio.com/). It provides a preview of your markdown and helps manage your files.
 
-### Aanpassen van content
+### Modifying content
 
-* Pas instellingen aan in de configuratiebestanden (`config.js`)
-* Voeg markdown-bestanden toe of wijzig bestaande bestanden
+* Adjust settings in the configuration files (`config.js`)
+* Add markdown files or modify existing ones
 
-### Configuratiebestanden
+### Configuration files
 
-* [`js/config.js`](js/config.js): bevat document-specifieke instellingen zoals titel, status en auteurs
-* [`organisation-config.js`](https://tools.geostandaarden.nl/respec/config/geonovum-config.js): bevat algemene informatie over de organisatie
+* [`js/config.js`](js/config.js): contains document-specific settings such as title, status and authors
+* [`organisation-config.js`](https://tools.geostandaarden.nl/respec/config/geonovum-config.js): contains general information about the organization
 
-Beide bestanden worden gelinkt in de [`index.html`](index.html)
+Both files are linked in [`index.html`](index.html)
 
-### Content schrijven
+### Writing content
 
-* Gebruik markdown of HTML
-* Splits content idealiter per hoofdstuk in losse bestanden
-* Voeg nieuwe secties toe aan de `index.html` via `data-include`:
+* Use markdown or HTML
+* Split content ideally by chapter into separate files
+* Add new sections to `index.html` via `data-include`:
 
 ```html
 <section data-include-format="markdown" data-include="ch01.md" class="informative"></section>
 <section data-include-format="markdown" data-include="ch02.md"></section>
 ```
 
-CSS-classes zijn ook bruikbaar in markdown via HTML:
+CSS classes can also be used in markdown via HTML:
 
 ```html
-<div class="example">voorbeeld</div>
+<div class="example">example</div>
 ```
 
-Meer info:
-* [Geonovum ReSpec handleiding](https://geonovum.github.io/handleiding-tooling/ReSpec/)
-* [ReSpec documentatie](https://respec.org/docs/#css-classes)
+More information:
+* [Geonovum ReSpec guide](https://geonovum.github.io/handleiding-tooling/ReSpec/)
+* [ReSpec documentation](https://respec.org/docs/#css-classes)
 
 ---
 
-## Automatische checks en build
+## Automatic checks and build
 
-De GitHub Actions workflow draait automatisch bij iedere commit of bij een GitHub Release. Daarbij gebeuren de volgende stappen:
+The GitHub Actions workflow runs automatically on every commit or on a GitHub Release. The following steps are performed:
 
-1. HTML wordt gegenereerd met [ReSpec](https://respec.org/)
-2. (optioneel) PDF wordt gegenereerd — indien `alternateFormats` is ingesteld in `config.js`:
+1. HTML is generated with [ReSpec](https://respec.org/)
+2. (optional) PDF is generated — if `alternateFormats` is set in `config.js`:
 
 ```js
 alternateFormats: [
@@ -83,62 +87,61 @@ alternateFormats: [
 ]
 ```
 
-3. Automatische controles worden uitgevoerd:
+3. Automatic checks are executed:
 
-    * HTML-validatie
-    * WCAG-check (toegankelijkheid)
-    * Linkcheck (controleren van verwijzingen)
+    * HTML validation
+    * WCAG check (accessibility)
+    * Link check (checking references)
 
-De resultaten zijn zichtbaar in het tabblad **Actions** van je repository.
+The results are visible on the **Actions** tab of your repository.
 
 ---
 
-## Publiceren van documenten
+## Publishing documents
 
-Wanneer je document klaar is, publiceer je via **GitHub Releases**:
+When your document is ready, publish it via **GitHub Releases**:
 
-### Controle vóór publiceren
+### Check before publishing
 
-Controleer vóór het maken van een pre-release of release in **Actions** de
-`Main Workflow` van de commit die je wilt publiceren. De job
-`Snapshot + Checks` moet groen zijn en de samenvatting moet
-**“Publicatiegereed: ja”** tonen. Proof HTML en de Lychee-linkcontrole zijn
-blokkerend; bij **“Publicatiegereed: nee”** moet je de gemelde fouten eerst
-oplossen.
+Before creating a pre-release or release in **Actions**, check the
+`Main Workflow` of the commit you want to publish. The `Snapshot + Checks`
+job must be green and the summary must show
+**“Publication ready: yes”**. Proof HTML and the Lychee link check are
+blocking; if the status is **“Publication ready: no”**, you must first resolve the reported errors.
 
-### Pre-release (testomgeving)
+### Pre-release (test environment)
 
-* Ga naar het tabblad **Releases** in je eigen repo
-* Klik op **“Create a new release”**
-* Geef een tag aan bij, Choose a tag (bijv. `v0.1.0`) en klik op **“Create new tag”**
-* **Vink aan:** “This is a pre-release” onderop deze pagina
-* Klik op **“Publish release”**
+* Go to the **Releases** tab in your own repo
+* Click **“Create a new release”**
+* Specify a tag, choose a tag (e.g. `v0.1.0`) and click **“Create new tag”**
+* **Check:** “This is a pre-release” at the bottom of the page
+* Click **“Publish release”**
 
-💡 Dit publiceert je document automatisch op:
+💡 This automatically publishes your document to:
 https://test.docs.geostandaarden.nl/
 
-(De exacte URL wordt bepaald door waarden in `config.js`)
+(The exact URL is determined by values in `config.js`)
 
-### Release (productieomgeving)
+### Release (production environment)
 
-* Ga opnieuw naar **Releases**
-* Klik op **“Create a new release”**
-* Geef een tag aan bij, Choose a tag (bijv. `v0.1.0`) en klik op **“Create new tag”**
-* Laat “pre-release” uitgevinkt
-* Klik op **“Publish release”**
+* Go back to **Releases**
+* Click **“Create a new release”**
+* Specify a tag, choose a tag (e.g. `v0.1.0`) and click **“Create new tag”**
+* Leave “pre-release” unchecked
+* Click **“Publish release”**
 
-💡 Dit maakt automatisch een **Pull Request** aan naar:
+💡 This automatically creates a **Pull Request** to:
 [`Geonovum/docs.geostandaarden.nl`](https://github.com/Geonovum/docs.geostandaarden.nl/pulls)
 
-Na goedkeuring van de PR wordt het document gepubliceerd op:
+After approval of the PR, the document is published at:
 https://docs.geostandaarden.nl/
 
 ---
 
 ## Workflows
 
-De workflows in `.github/workflows/` (`main.yml` en `visual-regression.yml`)
-roepen de centrale workflows aan uit
-[NL-ReSpec-workflows](https://github.com/Geonovum/NL-ReSpec-workflows). Pas
-deze bestanden niet aan: ze worden centraal beheerd en bijgewerkt. Vragen of
-wijzigingen over de build, controles of publicatie horen in die repository.
+The workflows in `.github/workflows/` (`main.yml` and `visual-regression.yml`)
+call the central workflows from
+[NL-ReSpec-workflows](https://github.com/Geonovum/NL-ReSpec-workflows). Do not
+modify these files: they are centrally managed and updated. Questions or
+changes regarding the build, checks or publication should be directed to that repository.
