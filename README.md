@@ -2,6 +2,8 @@
 
 This repository is used to capture the activities for the AI Ready DSFL project. It contains a document (starting as an empty ReSpec template). 
 
+Preview of the work-in-progress document: https://geonovum-labs.github.io/ai-ready-dsfl 
+
 [More info on the project can be added here]
 
 ## ReSpec template instructions
