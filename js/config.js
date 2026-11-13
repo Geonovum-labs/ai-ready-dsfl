@@ -107,6 +107,11 @@ let respecConfig = {
         companyURL: "https://www.kadaster.nl",
       },
       {
+        name: "Pano Maria",
+        company: "Modeldesk",
+        companyURL: "https://modeldesk.io",
+      },
+      {
         name: "Clemens Portele",
         company: "interactive instruments GMBH",
         companyURL: "https://www.interactive-instruments.de",
