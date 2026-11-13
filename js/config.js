@@ -55,15 +55,12 @@ let respecConfig = {
 
   //-- TODO: de namen van de Editor(s) / Redacteur(en)
   //-- vul in: per Editor: name:, company:, companyURL:
-  editors:
-    [
+  editors:  [
       {
         name: "Michel Grothe",
         company: "Geonovum",
         companyURL: "https://www.geonovum.nl",
-      }
-    ],
-        [
+      },
       {
         name: "Marcel Reuvers",
         company: "Kadaster",
@@ -73,12 +70,61 @@ let respecConfig = {
 
   //-- de namen van de auteur(s) 
   //-- vul in: per auteur: name:, company:, companyURL: 
-  authors:
-    [
+  authors:  [
+      {
+        name: "Jesse Bakker",
+        company: "Kadaster",
+        companyURL: "https://www.kadaster.nl",
+      },
+      {
+        name: "Geert-Jan van den Bogaerde",
+        company: "...",
+        companyURL: "...",
+      },
+      {
+        name: "Linda van den Brink",
+        company: "Geonovum",
+        companyURL: "https://www.geonovum.nl",
+      },
+      {
+        name: "Sjaak Derksen",
+        company: "Rijksgeologsche Dienst Nederland",
+        companyURL: "https://www.geologischedienst.nl/",
+      },
+      {
+        name: "Joost Farla",
+        company: "Modeldesk",
+        companyURL: "https://modeldesk.io",
+      },
+      {
+        name: "Michel Grothe",
+        company: "Geonovum",
+        companyURL: "https://www.geonovum.nl",
+      },
+      {
+        name: "Anjo Kolk",
+        company: "Kadaster",
+        companyURL: "https://www.kadaster.nl",
+      },
+      {
+        name: "Clemens Portele",
+        company: "interactive instruments GMBH",
+        companyURL: "https://www.interactive-instruments.de",
+      },
       {
         name: "Marcel Reuvers",
         company: "Kadaster",
         companyURL: "https://www.kadaster.nl",
+      },
+      {
+        name: "Lexi Rowland",
+        company: "Kadaster",
+        companyURL: "https://www.kadaster.nl",
+      },
+      {
+        name: "Johan Vandewalle",
+        company: "Enact",
+        companyURL: "...",
       }
     ],
 
