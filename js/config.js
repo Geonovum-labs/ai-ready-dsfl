@@ -184,6 +184,13 @@ let respecConfig = {
 
   // [3] Ongepubliceerd concept. Gebruikt voor: gebiedsinformatie voor elke taak of
   // beleidscyclus (§1.9); gebruikers zonder geokennis.
+  "BZK-DSFL": {
+    title: "Programma Initiatie Document: Data Space Fysieke Leefomgeving (DSFL)",
+    authors: [
+      "M. Peersmann"
+    ],
+    date: "27 mei 2026"
+  },
   "DSFL-PSA": {
     title: "Projectstartarchitectuur – Datastelsel Fysieke Leefomgeving (DSFL-PSA) (Versie 0.06)",
     authors: [
